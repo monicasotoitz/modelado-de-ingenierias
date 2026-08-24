@@ -9,971 +9,683 @@
   <style>
     * {
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #1f2933;
+      background-color: #f4f5f7;
+      color: #333;
       line-height: 1.6;
     }
 
+    /* =========================
+       ENCABEZADO
+    ========================== */
+
     header {
-      background: linear-gradient(135deg, #173f5f, #20639b);
+      background-color: #1f3b4d;
       color: white;
-      padding: 70px 20px;
       text-align: center;
+      padding: 45px 20px;
     }
 
     header h1 {
-      margin: 0 0 10px;
-      font-size: 42px;
+      margin: 0;
+      font-size: 2.3rem;
     }
 
     header p {
-      margin: 6px 0;
-      font-size: 18px;
+      margin: 8px 0 0;
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
 
-    nav {
+    /* =========================
+       CONTENEDOR GENERAL
+    ========================== */
+
+    .contenedor {
+      max-width: 1050px;
+      margin: 30px auto;
+      padding: 0 20px 50px;
+    }
+
+    /* =========================
+       INFORMACIÓN DE LA MATERIA
+    ========================== */
+
+    .informacion {
       background: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
-      text-align: center;
-      padding: 14px 10px;
+      padding: 28px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
-    nav a {
-      color: #173f5f;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 12px;
-    }
-
-    nav a:hover {
-      color: #20639b;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 35px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 28px;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.07);
-    }
-
-    h2 {
-      color: #173f5f;
+    .informacion h2 {
       margin-top: 0;
-      border-bottom: 2px solid #dce6ef;
-      padding-bottom: 10px;
+      color: #1f3b4d;
     }
 
     .datos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
       margin-top: 20px;
     }
 
     .dato {
-      background: #eef4f8;
-      padding: 16px;
-      border-radius: 10px;
+      background-color: #f5f7f8;
+      padding: 15px;
+      border-radius: 7px;
     }
 
-    .temas {
-      display: grid;
-      gap: 22px;
+    .dato strong {
+      color: #1f3b4d;
+      display: block;
+      margin-bottom: 3px;
     }
 
-    .tema {
-      border-left: 6px solid #20639b;
-      padding: 20px;
-      background: #f9fbfc;
-      border-radius: 10px;
-    }
+    /* =========================
+       DOCUMENTOS GENERALES
+    ========================== */
 
-    .tema h3 {
-      color: #173f5f;
-      margin-top: 0;
-    }
-
-    .horas {
-      font-weight: bold;
-      color: #20639b;
-    }
-
-    details {
+    .documentos {
       background: white;
-      border: 1px solid #dce6ef;
-      border-radius: 8px;
-      margin: 12px 0;
-      padding: 12px 16px;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
-    summary {
-      cursor: pointer;
-      color: #173f5f;
+    .documentos h2 {
+      margin-top: 0;
+      color: #1f3b4d;
     }
 
-    details[open] {
-      background: #f8fbfd;
-    }
-
-    .arquitectura {
-      background: #fff5e8;
-      border-left: 5px solid #d98b2b;
-      padding: 16px;
-      border-radius: 8px;
-      margin: 15px 0;
-    }
-
-    .evaluacion {
-      width: 100%;
-      border-collapse: collapse;
+    .grupo-botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 18px;
     }
 
-    .evaluacion th,
-    .evaluacion td {
-      border: 1px solid #d5dbe0;
-      padding: 12px;
-      text-align: left;
-    }
-
-    .evaluacion th {
-      background: #173f5f;
-      color: white;
-    }
+    /* =========================
+       BOTONES
+    ========================== */
 
     .boton {
       display: inline-block;
-      background: #20639b;
+      background-color: #1f3b4d;
       color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
-      margin: 6px 4px 6px 0;
+      padding: 11px 18px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: 0.2s;
     }
 
     .boton:hover {
-      background: #173f5f;
+      background-color: #315b72;
+      transform: translateY(-1px);
     }
 
-    .boton-secundario {
-      background: #3a7d44;
+    .boton-classroom {
+      background-color: #2f6b55;
     }
 
-    .boton-secundario:hover {
-      background: #2c6134;
+    .boton-classroom:hover {
+      background-color: #3f856d;
     }
 
-    .aviso {
-      background: #eef7f1;
-      border-left: 5px solid #3a7d44;
-      padding: 16px;
-      border-radius: 8px;
+    /* =========================
+       TÍTULO DE TEMAS
+    ========================== */
+
+    .titulo-seccion {
+      color: #1f3b4d;
+      margin: 35px 0 15px;
+    }
+
+    /* =========================
+       BLOQUES DESPLEGABLES
+    ========================== */
+
+    details {
+      background: white;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    summary {
+      background-color: #dfe7eb;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #1f3b4d;
+      list-style: none;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 24px;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details[open] summary {
+      background-color: #d4e0e5;
+    }
+
+    .contenido-tema {
+      padding: 25px;
+    }
+
+    .contenido-tema h3 {
+      color: #1f3b4d;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .contenido-tema h3:first-child {
+      margin-top: 0;
+    }
+
+    .contenido-tema ul {
+      padding-left: 22px;
+    }
+
+    .contenido-tema li {
+      margin-bottom: 7px;
+    }
+
+    /* =========================
+       CRITERIOS
+    ========================== */
+
+    .criterios {
       margin-top: 15px;
+      background-color: #f6f8f9;
+      padding: 18px;
+      border-radius: 7px;
     }
+
+    .criterio {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 10px 5px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .criterio:last-child {
+      border-bottom: none;
+    }
+
+    .porcentaje {
+      font-weight: bold;
+      color: #1f3b4d;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       PIE DE PÁGINA
+    ========================== */
 
     footer {
-      background: #173f5f;
+      background-color: #1f3b4d;
       color: white;
       text-align: center;
-      padding: 30px 20px;
+      padding: 20px;
       margin-top: 40px;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 700px) {
+    /* =========================
+       CELULAR
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 30px 15px;
+      }
+
       header h1 {
-        font-size: 30px;
+        font-size: 1.8rem;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 6px 8px;
+      .contenedor {
+        padding: 0 14px 35px;
       }
 
-      section {
-        padding: 22px;
+      .informacion,
+      .documentos,
+      .contenido-tema {
+        padding: 20px;
+      }
+
+      .grupo-botones {
+        flex-direction: column;
+      }
+
+      .boton {
+        width: 100%;
+        text-align: center;
+      }
+
+      .criterio {
+        flex-direction: column;
+        gap: 2px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Modelado de Ingenierías</h1>
-  <p>Arquitectura | 9.º semestre | Agosto - Diciembre 2026</p>
-  <p>Instituto Tecnológico de Zacatecas</p>
-</header>
+  <!-- =========================
+       ENCABEZADO
+  ========================== -->
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#competencia">Competencia</a>
-  <a href="#temas">Temas</a>
-  <a href="#evaluacion">Evaluación</a>
-  <a href="#recursos">Recursos</a>
-</nav>
-
-<main>
+  <header>
+    <h1>Modelado de Ingenierías</h1>
+    <p>Arquitectura · Grupo A</p>
+  </header>
 
-<!-- ===================================================== -->
-<!-- INFORMACIÓN DE LA ASIGNATURA -->
-<!-- ===================================================== -->
 
-<section id="inicio">
+  <main class="contenedor">
 
-  <h2>Información de la asignatura</h2>
+    <!-- =========================
+         INFORMACIÓN GENERAL
+    ========================== -->
 
-  <p>
-    Este sitio reúne los contenidos, actividades, ejercicios, recursos,
-    prácticas y productos de la asignatura <strong>Modelado de Ingenierías</strong>.
-    El curso se desarrolla mediante metodología BIM utilizando Autodesk Revit
-    para la integración de estructuras e instalaciones en proyectos arquitectónicos.
-  </p>
+    <section class="informacion">
 
-  <div class="datos">
+      <h2>Información de la materia</h2>
 
-    <div class="dato">
-      <strong>Asignatura</strong><br>
-      Modelado de Ingenierías
-    </div>
+      <p>
+        En esta asignatura se desarrollarán competencias para el modelado
+        y coordinación de los sistemas de ingeniería que intervienen
+        en un proyecto arquitectónico mediante herramientas BIM.
+      </p>
 
-    <div class="dato">
-      <strong>Clave</strong><br>
-      DRV-2503
-    </div>
+      <div class="datos">
 
-    <div class="dato">
-      <strong>Carrera</strong><br>
-      Arquitectura
-    </div>
+        <div class="dato">
+          <strong>Asignatura</strong>
+          Modelado de Ingenierías
+        </div>
 
-    <div class="dato">
-      <strong>Semestre</strong><br>
-      9.º semestre
-    </div>
+        <div class="dato">
+          <strong>Programa educativo</strong>
+          Arquitectura
+        </div>
 
-    <div class="dato">
-      <strong>Horas semanales</strong><br>
-      4 horas
-    </div>
+        <div class="dato">
+          <strong>Semestre</strong>
+          Noveno semestre
+        </div>
 
-    <div class="dato">
-      <strong>Periodo</strong><br>
-      Agosto - Diciembre 2026
-    </div>
+        <div class="dato">
+          <strong>Grupo</strong>
+          A
+        </div>
 
-  </div>
+      </div>
 
-  <p>
+    </section>
 
-    <!-- Cuando subas el programa PDF al repositorio,
-         utiliza exactamente este nombre -->
 
-    <a class="boton"
-       href="Modelado-de-Ingenierias-Programa.pdf"
-       target="_blank">
-       Programa de la asignatura
-    </a>
+    <!-- =========================
+         DOCUMENTOS DE LA MATERIA
+         FUERA DE LOS BLOQUES
+    ========================== -->
 
-    <!-- Este botón se activará cuando tengamos
-         la gestión oficial en PDF -->
+    <section class="documentos">
 
-    <a class="boton"
-       href="Gestion-Modelado-de-Ingenierias.pdf"
-       target="_blank">
-       Gestión del curso
-    </a>
+      <h2>Documentos de la materia</h2>
 
-  </p>
+      <p>
+        Consulta los documentos generales que servirán de guía
+        durante el desarrollo del curso.
+      </p>
 
-</section>
+      <div class="grupo-botones">
 
+        <!-- PROGRAMA DE LA MATERIA -->
 
-<!-- ===================================================== -->
-<!-- COMPETENCIA -->
-<!-- ===================================================== -->
+        <a
+          class="boton"
+          href="Programa%20de%20Modelado%20de%20Ingenierías.pdf"
+          target="_blank"
+          rel="noopener noreferrer">
+          Programa de la materia
+        </a>
 
-<section id="competencia">
 
-  <h2>Competencia de la asignatura</h2>
+        <!-- PLANIFICACIÓN DE LA MATERIA -->
 
-  <p>
-    Desarrolla y representa modelos digitales de estructuras e instalaciones
-    correspondientes a un proyecto arquitectónico mediante Autodesk Revit,
-    integrando criterios técnicos, detalles constructivos, especificaciones
-    y documentación dentro de un entorno BIM.
-  </p>
+        <a
+          class="boton"
+          href="Planificación%20para%20Modelado%20de%20Ingenierías.pdf"
+          target="_blank"
+          rel="noopener noreferrer">
+          Planificación de la materia
+        </a>
 
-  <div class="aviso">
-    <strong>Metodología de trabajo:</strong><br>
-    Durante el semestre se desarrollará progresivamente un modelo BIM,
-    comenzando con el sistema estructural y continuando con la integración
-    de las instalaciones hidráulicas, sanitarias, pluviales y eléctricas.
-  </div>
 
-</section>
+        <!-- CLASSROOM GENERAL -->
 
+        <a
+          class="boton boton-classroom"
+          href="https://classroom.google.com/u/1/c/ODI2MTA2MDU0Mzgx"
+          target="_blank"
+          rel="noopener noreferrer">
+          Ir a Classroom
+        </a>
 
-<!-- ===================================================== -->
-<!-- CONTENIDO DEL CURSO -->
-<!-- ===================================================== -->
+      </div>
 
-<section id="temas">
+    </section>
 
-  <h2>Contenido del curso</h2>
 
-  <div class="temas">
+    <!-- =========================
+         TEMAS
+    ========================== -->
 
+    <h2 class="titulo-seccion">Contenido del curso</h2>
 
-<!-- ===================================================== -->
-<!-- TEMA 1 -->
-<!-- ===================================================== -->
 
-<div class="tema">
+    <!-- =====================================================
+         TEMA 1
+    ====================================================== -->
 
-  <h3>Tema 1. Revit Estructura</h3>
+    <details>
 
-  <p>
-    Desarrollo del modelo estructural de un proyecto arquitectónico mediante
-    Autodesk Revit, desde los criterios iniciales de diseño y modelado de
-    cimentaciones hasta la generación de detalles, especificaciones,
-    anotaciones y planos estructurales.
-  </p>
+      <summary>
+        Tema 1. Modelado estructural
+      </summary>
 
-  <p class="horas">
-    Periodo: 24 de agosto - 22 de octubre de 2026
-  </p>
+      <div class="contenido-tema">
 
-  <p class="horas">
-    35 horas teórico-prácticas
-  </p>
+        <h3>Descripción</h3>
 
-  <h4>Bloques de trabajo</h4>
+        <p>
+          Desarrollo del modelo estructural del proyecto arquitectónico,
+          considerando la relación entre los elementos arquitectónicos
+          y los componentes estructurales mediante herramientas de
+          modelado BIM.
+        </p>
 
 
-<!-- BLOQUE 1 -->
+        <h3>Actividades de aprendizaje</h3>
 
-<details>
+        <ul>
+          <li>
+            Reconocimiento de las herramientas y entorno de trabajo
+            para el modelado estructural.
+          </li>
 
-  <summary>
-    <strong>Bloque 1. Criterios para el diseño estructural</strong>
-  </summary>
+          <li>
+            Configuración y vinculación del modelo arquitectónico.
+          </li>
 
-  <p><strong>Contenido:</strong></p>
+          <li>
+            Identificación de niveles, ejes y elementos estructurales
+            requeridos por el proyecto.
+          </li>
 
-  <ul>
-    <li>1.1 Criterios para el diseño estructural.</li>
-  </ul>
+          <li>
+            Modelado de cimentaciones y elementos de soporte.
+          </li>
 
-  <p><strong>Periodo:</strong> 24 al 27 de agosto.</p>
+          <li>
+            Modelado de columnas, trabes y sistemas estructurales.
+          </li>
 
-  <p><strong>Actividades:</strong></p>
+          <li>
+            Desarrollo de ejercicios prácticos durante las sesiones
+            de clase.
+          </li>
 
-  <ul>
-    <li>Presentación y encuadre de la asignatura.</li>
-    <li>Introducción a la metodología BIM.</li>
-    <li>Análisis del proyecto arquitectónico base.</li>
-    <li>Identificación del sistema estructural.</li>
-    <li>Relación entre el modelo arquitectónico y estructural.</li>
-    <li>Configuración inicial del proyecto en Revit.</li>
-    <li>Creación y revisión de niveles y ejes estructurales.</li>
-  </ul>
+          <li>
+            Aplicación de los conocimientos adquiridos en el proyecto
+            integrador.
+          </li>
 
-  <p><strong>Producto:</strong></p>
+          <li>
+            Entrega de los avances y ejercicios solicitados a través
+            de Classroom.
+          </li>
 
-  <p>
-    Archivo inicial de Revit con niveles, ejes y configuración
-    básica del modelo estructural.
-  </p>
+          <li>
+            Participación en las actividades correspondientes a la
+            Semana de Arquitectura.
+          </li>
+        </ul>
 
-</details>
 
+        <h3>Apoyos didácticos</h3>
 
-<!-- BLOQUE 2 -->
+        <ul>
+          <li>Equipo de cómputo.</li>
+          <li>Software Autodesk Revit.</li>
+          <li>Proyector y equipo audiovisual.</li>
+          <li>Material digital proporcionado durante el curso.</li>
+          <li>Ejercicios demostrativos.</li>
+          <li>Proyecto arquitectónico base.</li>
+          <li>Plataforma Google Classroom.</li>
+          <li>Recursos de consulta disponibles en línea.</li>
+        </ul>
 
-<details>
 
-  <summary>
-    <strong>Bloque 2. Modelado de la cimentación</strong>
-  </summary>
+        <h3>Criterios de evaluación</h3>
 
-  <p><strong>Contenido:</strong></p>
+        <div class="criterios">
 
-  <ul>
-    <li>1.2 Modelado de la cimentación.</li>
-  </ul>
+          <div class="criterio">
+            <span>Asistencia</span>
+            <span class="porcentaje">10 %</span>
+          </div>
 
-  <p><strong>Periodo:</strong> 31 de agosto al 8 de septiembre.</p>
+          <div class="criterio">
+            <span>Entregas en Classroom</span>
+            <span class="porcentaje">25 %</span>
+          </div>
 
-  <p><strong>Actividades:</strong></p>
+          <div class="criterio">
+            <span>Trabajos realizados en clase</span>
+            <span class="porcentaje">25 %</span>
+          </div>
 
-  <ul>
-    <li>Identificación de los elementos de cimentación.</li>
-    <li>Configuración y edición de familias estructurales.</li>
-    <li>Modelado de zapatas y elementos de cimentación.</li>
-    <li>Configuración de niveles y propiedades.</li>
-    <li>Revisión tridimensional del sistema de cimentación.</li>
-  </ul>
+          <div class="criterio">
+            <span>Participación en Semana de Arquitectura</span>
+            <span class="porcentaje">10 %</span>
+          </div>
 
-  <p><strong>Producto:</strong></p>
+          <div class="criterio">
+            <span>Entrega del proyecto integrador</span>
+            <span class="porcentaje">30 %</span>
+          </div>
 
-  <p>
-    Modelo digital de cimentación integrado al proyecto arquitectónico.
-  </p>
+        </div>
 
-</details>
 
+        <h3>Recursos</h3>
 
-<!-- BLOQUE 3 -->
+        <div class="grupo-botones">
 
-<details>
+          <a
+            class="boton boton-classroom"
+            href="https://classroom.google.com/u/1/c/ODI2MTA2MDU0Mzgx"
+            target="_blank"
+            rel="noopener noreferrer">
+            Abrir Classroom
+          </a>
 
-  <summary>
-    <strong>Bloque 3. Modelado de la estructura</strong>
-  </summary>
+        </div>
 
-  <p><strong>Contenido:</strong></p>
+      </div>
 
-  <ul>
-    <li>1.3 Modelado de la estructura.</li>
-  </ul>
+    </details>
 
-  <p><strong>Periodo:</strong> 9 al 24 de septiembre.</p>
 
-  <p><strong>Actividades:</strong></p>
+    <!-- =====================================================
+         TEMA 2
+    ====================================================== -->
 
-  <ul>
-    <li>Modelado de columnas.</li>
-    <li>Modelado de vigas.</li>
-    <li>Modelado de losas estructurales.</li>
-    <li>Configuración de propiedades y materiales.</li>
-    <li>Integración de los elementos estructurales.</li>
-    <li>Revisión tridimensional del modelo.</li>
-    <li>Coordinación con el modelo arquitectónico.</li>
-  </ul>
+    <details>
 
-  <p><strong>Producto:</strong></p>
+      <summary>
+        Tema 2. Modelado de instalaciones
+      </summary>
 
-  <p>
-    Modelo estructural integrado en Autodesk Revit.
-  </p>
+      <div class="contenido-tema">
 
-</details>
+        <h3>Descripción</h3>
 
+        <p>
+          Desarrollo y coordinación de los sistemas de instalaciones
+          que forman parte del proyecto arquitectónico mediante
+          herramientas BIM, considerando su relación con el modelo
+          arquitectónico y estructural.
+        </p>
 
-<!-- BLOQUE 4 -->
 
-<details>
+        <h3>Actividades de aprendizaje</h3>
 
-  <summary>
-    <strong>Bloque 4. Generación de detalles estructurales</strong>
-  </summary>
+        <ul>
+          <li>
+            Reconocimiento de las herramientas para el modelado
+            de instalaciones.
+          </li>
 
-  <p><strong>Contenido:</strong></p>
+          <li>
+            Configuración y vinculación de los modelos arquitectónico
+            y estructural.
+          </li>
 
-  <ul>
-    <li>1.4 Generación de detalles estructurales.</li>
-  </ul>
+          <li>
+            Identificación de los sistemas de instalaciones requeridos
+            en el proyecto.
+          </li>
 
-  <p><strong>Periodo:</strong> 28 de septiembre al 1 de octubre.</p>
+          <li>
+            Modelado de redes y componentes de las instalaciones.
+          </li>
 
-  <p><strong>Actividades:</strong></p>
+          <li>
+            Desarrollo de soluciones mediante ejercicios prácticos
+            realizados durante las sesiones de clase.
+          </li>
 
-  <ul>
-    <li>Generación de cortes y secciones.</li>
-    <li>Creación de vistas de detalle.</li>
-    <li>Representación de encuentros estructurales.</li>
-    <li>Organización gráfica de los detalles constructivos.</li>
-  </ul>
+          <li>
+            Coordinación de las instalaciones con los elementos
+            arquitectónicos y estructurales del proyecto.
+          </li>
 
-  <p><strong>Producto:</strong></p>
+          <li>
+            Detección y solución de interferencias entre los diferentes
+            sistemas del modelo.
+          </li>
 
-  <p>
-    Vistas y detalles estructurales desarrollados en Revit.
-  </p>
+          <li>
+            Aplicación de los conocimientos adquiridos en el desarrollo
+            del proyecto integrador.
+          </li>
 
-</details>
+          <li>
+            Entrega de avances y ejercicios mediante Google Classroom.
+          </li>
+        </ul>
 
 
-<!-- SEMANA DE ARQUITECTURA -->
+        <h3>Apoyos didácticos</h3>
 
-<div class="arquitectura">
+        <ul>
+          <li>Equipo de cómputo.</li>
+          <li>Software Autodesk Revit.</li>
+          <li>Proyector y equipo audiovisual.</li>
+          <li>Material digital proporcionado durante el curso.</li>
+          <li>Ejercicios demostrativos.</li>
+          <li>Modelos arquitectónicos y estructurales de referencia.</li>
+          <li>Proyecto integrador.</li>
+          <li>Plataforma Google Classroom.</li>
+          <li>Recursos digitales de consulta.</li>
+        </ul>
 
-  <strong>Semana de Arquitectura | 5 al 9 de octubre</strong>
 
-  <p>
-    Participación en talleres, conferencias y actividades académicas
-    relacionadas con la formación profesional del arquitecto.
-  </p>
+        <h3>Criterios de evaluación</h3>
 
-  <p>
-    La participación forma parte de las actividades académicas del Tema 1
-    y será considerada dentro de la evaluación.
-  </p>
+        <div class="criterios">
 
-</div>
+          <div class="criterio">
+            <span>Asistencia</span>
+            <span class="porcentaje">10 %</span>
+          </div>
 
+          <div class="criterio">
+            <span>Entregas en Classroom</span>
+            <span class="porcentaje">30 %</span>
+          </div>
 
-<!-- BLOQUE 5 -->
+          <div class="criterio">
+            <span>Trabajos realizados en clase</span>
+            <span class="porcentaje">30 %</span>
+          </div>
 
-<details>
+          <div class="criterio">
+            <span>Entrega del proyecto integrador</span>
+            <span class="porcentaje">30 %</span>
+          </div>
 
-  <summary>
-    <strong>Bloque 5. Especificaciones y anotaciones</strong>
-  </summary>
+        </div>
 
-  <p><strong>Contenido:</strong></p>
 
-  <ul>
-    <li>1.5 Especificaciones y anotaciones.</li>
-  </ul>
+        <h3>Recursos</h3>
 
-  <p><strong>Periodo:</strong> 12 al 15 de octubre.</p>
+        <div class="grupo-botones">
 
-  <p><strong>Actividades:</strong></p>
+          <a
+            class="boton boton-classroom"
+            href="https://classroom.google.com/u/1/c/ODI2MTA2MDU0Mzgx"
+            target="_blank"
+            rel="noopener noreferrer">
+            Abrir Classroom
+          </a>
 
-  <ul>
-    <li>Colocación de cotas.</li>
-    <li>Incorporación de etiquetas.</li>
-    <li>Simbología estructural.</li>
-    <li>Notas y especificaciones.</li>
-    <li>Configuración de elementos de anotación.</li>
-  </ul>
+        </div>
 
-  <p><strong>Producto:</strong></p>
+      </div>
 
-  <p>
-    Vistas estructurales correctamente documentadas y especificadas.
-  </p>
+    </details>
 
-</details>
+  </main>
 
 
-<!-- BLOQUE 6 -->
+  <!-- =========================
+       PIE DE PÁGINA
+  ========================== -->
 
-<details>
-
-  <summary>
-    <strong>Bloque 6. Representación de los planos estructurales</strong>
-  </summary>
-
-  <p><strong>Contenido:</strong></p>
-
-  <ul>
-    <li>1.6 Representación de los planos estructurales.</li>
-  </ul>
-
-  <p><strong>Periodo:</strong> 19 al 22 de octubre.</p>
-
-  <p><strong>Actividades:</strong></p>
-
-  <ul>
-    <li>Organización de vistas.</li>
-    <li>Configuración de láminas.</li>
-    <li>Integración de plantas, cortes y detalles.</li>
-    <li>Revisión de escalas.</li>
-    <li>Revisión de calidad gráfica.</li>
-    <li>Preparación de la documentación final.</li>
-  </ul>
-
-  <p><strong>Producto integrador:</strong></p>
-
-  <p>
-    Modelo estructural completo en Revit y juego de planos estructurales.
-  </p>
-
-</details>
-
-
-<h4>Recursos del Tema 1</h4>
-
-<p>
-
-  <a class="boton"
-     href="Modelado-de-Ingenierias-Programa.pdf"
-     target="_blank">
-     Programa de la asignatura
-  </a>
-
-  <a class="boton"
-     href="Instrumentacion-Didactica-Modelado-de-Ingenierias.pdf"
-     target="_blank">
-     Instrumentación didáctica
-  </a>
-
-  <a class="boton"
-     href="#evaluacion-tema1">
-     Criterios de evaluación
-  </a>
-
-  <!-- REEMPLAZAR # POR EL ENLACE DE GOOGLE CLASSROOM -->
-
-  <a class="boton boton-secundario"
-     href="#"
-     target="_blank">
-     Abrir Google Classroom
-  </a>
-
-</p>
-
-
-<h4 id="evaluacion-tema1">Evaluación del Tema 1</h4>
-
-<ul>
-  <li>Asistencia y participación: 10%</li>
-  <li>Entregas en Google Classroom: 25%</li>
-  <li>Trabajos realizados en clase: 25%</li>
-  <li>Participación en la Semana de Arquitectura: 10%</li>
-  <li>Proyecto integrador: 30%</li>
-</ul>
-
-</div>
-
-
-<!-- ===================================================== -->
-<!-- TEMA 2 -->
-<!-- ===================================================== -->
-
-<div class="tema">
-
-  <h3>Tema 2. Revit Instalaciones</h3>
-
-  <p>
-    Desarrollo y coordinación de las instalaciones hidráulicas,
-    sanitarias, pluviales y eléctricas mediante Autodesk Revit,
-    integrándolas al modelo arquitectónico y estructural del proyecto.
-  </p>
-
-  <p class="horas">
-    Periodo: 26 de octubre - 10 de diciembre de 2026
-  </p>
-
-  <p class="horas">
-    26 horas teórico-prácticas
-  </p>
-
-  <h4>Bloques de trabajo</h4>
-
-
-<!-- BLOQUE 1 TEMA 2 -->
-
-<details>
-
-  <summary>
-    <strong>Bloque 1. Criterios para diseño de instalaciones</strong>
-  </summary>
-
-  <p><strong>Contenido:</strong></p>
-
-  <ul>
-    <li>
-      2.1 Criterio para diseño de instalaciones hidráulica,
-      eléctrica, sanitaria y pluvial.
-    </li>
-  </ul>
-
-  <p><strong>Periodo:</strong> 26 al 29 de octubre.</p>
-
-  <p><strong>Actividades:</strong></p>
-
-  <ul>
-    <li>Análisis del proyecto arquitectónico.</li>
-    <li>Identificación de necesidades de instalaciones.</li>
-    <li>Revisión de criterios básicos de diseño.</li>
-    <li>Organización de sistemas dentro del entorno BIM.</li>
-    <li>Configuración inicial del modelo de instalaciones.</li>
-  </ul>
-
-  <p><strong>Producto:</strong></p>
-
-  <p>
-    Modelo base configurado para el desarrollo de las instalaciones.
-  </p>
-
-</details>
-
-
-<!-- BLOQUE 2 TEMA 2 -->
-
-<details>
-
-  <summary>
-    <strong>Bloque 2. Modelado de instalaciones</strong>
-  </summary>
-
-  <p><strong>Contenido:</strong></p>
-
-  <ul>
-    <li>
-      2.2 Modelado de instalaciones hidráulica,
-      eléctrica, sanitaria y pluvial.
-    </li>
-  </ul>
-
-  <p><strong>Periodo:</strong> 3 al 26 de noviembre.</p>
-
-  <p><strong>Actividades:</strong></p>
-
-  <ul>
-    <li>Modelado de la instalación hidráulica.</li>
-    <li>Modelado de la instalación sanitaria.</li>
-    <li>Modelado de la instalación pluvial.</li>
-    <li>Modelado de la instalación eléctrica.</li>
-    <li>Colocación de equipos y accesorios.</li>
-    <li>Configuración de tuberías, conexiones y componentes.</li>
-    <li>Revisión de sistemas.</li>
-    <li>Coordinación con el modelo arquitectónico y estructural.</li>
-    <li>Identificación y corrección de interferencias.</li>
-  </ul>
-
-  <p><strong>Producto:</strong></p>
-
-  <p>
-    Modelo coordinado de instalaciones hidráulicas,
-    sanitarias, pluviales y eléctricas.
-  </p>
-
-</details>
-
-
-<!-- BLOQUE 3 TEMA 2 -->
-
-<details>
-
-  <summary>
-    <strong>Bloque 3. Especificaciones y anotaciones</strong>
-  </summary>
-
-  <p><strong>Contenido:</strong></p>
-
-  <ul>
-    <li>2.3 Especificaciones y anotaciones.</li>
-  </ul>
-
-  <p><strong>Periodo:</strong> 30 de noviembre al 3 de diciembre.</p>
-
-  <p><strong>Actividades:</strong></p>
-
-  <ul>
-    <li>Incorporación de etiquetas.</li>
-    <li>Simbología de instalaciones.</li>
-    <li>Notas técnicas.</li>
-    <li>Especificaciones.</li>
-    <li>Identificación de elementos.</li>
-    <li>Revisión de información gráfica.</li>
-  </ul>
-
-  <p><strong>Producto:</strong></p>
-
-  <p>
-    Vistas de instalaciones documentadas y especificadas.
-  </p>
-
-</details>
-
-
-<!-- BLOQUE 4 TEMA 2 -->
-
-<details>
-
-  <summary>
-    <strong>Bloque 4. Representación de planos de instalaciones</strong>
-  </summary>
-
-  <p><strong>Contenido:</strong></p>
-
-  <ul>
-    <li>2.4 Representación de planos de instalaciones.</li>
-  </ul>
-
-  <p><strong>Periodo:</strong> 7 al 10 de diciembre.</p>
-
-  <p><strong>Actividades:</strong></p>
-
-  <ul>
-    <li>Generación de vistas.</li>
-    <li>Generación de cortes y detalles.</li>
-    <li>Organización de láminas.</li>
-    <li>Revisión de escalas.</li>
-    <li>Integración de simbología y especificaciones.</li>
-    <li>Preparación de planos finales.</li>
-  </ul>
-
-  <p><strong>Producto integrador:</strong></p>
-
-  <p>
-    Modelo integral de instalaciones y juego de planos
-    hidráulicos, sanitarios, pluviales y eléctricos.
-  </p>
-
-</details>
-
-
-<h4>Recursos del Tema 2</h4>
-
-<p>
-
-  <a class="boton"
-     href="Modelado-de-Ingenierias-Programa.pdf"
-     target="_blank">
-     Programa de la asignatura
-  </a>
-
-  <a class="boton"
-     href="Instrumentacion-Didactica-Modelado-de-Ingenierias.pdf"
-     target="_blank">
-     Instrumentación didáctica
-  </a>
-
-  <a class="boton"
-     href="#evaluacion-tema2">
-     Criterios de evaluación
-  </a>
-
-  <!-- REEMPLAZAR # POR EL ENLACE DE GOOGLE CLASSROOM -->
-
-  <a class="boton boton-secundario"
-     href="#"
-     target="_blank">
-     Abrir Google Classroom
-  </a>
-
-</p>
-
-
-<h4 id="evaluacion-tema2">Evaluación del Tema 2</h4>
-
-<ul>
-  <li>Asistencia y participación: 10%</li>
-  <li>Entregas en Google Classroom: 30%</li>
-  <li>Trabajos realizados en clase: 30%</li>
-  <li>Proyecto integrador: 30%</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ===================================================== -->
-<!-- EVALUACIÓN GENERAL -->
-<!-- ===================================================== -->
-
-<section id="evaluacion">
-
-  <h2>Criterios generales de evaluación</h2>
-
-  <p>
-    La evaluación considera la asistencia y participación,
-    el trabajo desarrollado durante las sesiones,
-    las actividades entregadas mediante Google Classroom
-    y los productos integradores correspondientes a cada tema.
-  </p>
-
-  <table class="evaluacion">
-
-    <tr>
-      <th>Nivel de desempeño</th>
-      <th>Valoración</th>
-    </tr>
-
-    <tr>
-      <td>Excelente</td>
-      <td>95 - 100</td>
-    </tr>
-
-    <tr>
-      <td>Notable</td>
-      <td>85 - 94</td>
-    </tr>
-
-    <tr>
-      <td>Bueno</td>
-      <td>75 - 84</td>
-    </tr>
-
-    <tr>
-      <td>Suficiente</td>
-      <td>70 - 74</td>
-    </tr>
-
-    <tr>
-      <td>Competencia no alcanzada</td>
-      <td>NA</td>
-    </tr>
-
-  </table>
-
-</section>
-
-
-<!-- ===================================================== -->
-<!-- RECURSOS -->
-<!-- ===================================================== -->
-
-<section id="recursos">
-
-  <h2>Recursos de trabajo</h2>
-
-  <ul>
-    <li>Autodesk Revit.</li>
-    <li>Google Classroom.</li>
-    <li>Equipo de cómputo.</li>
-    <li>Proyecto arquitectónico base.</li>
-    <li>Modelo estructural.</li>
-    <li>Familias y componentes BIM.</li>
-    <li>Planos estructurales y de instalaciones.</li>
-    <li>Archivos digitales de práctica.</li>
-    <li>Tutoriales y videos de apoyo.</li>
-    <li>Normatividad y material técnico de consulta.</li>
-  </ul>
-
-  <p>
-    Los archivos de trabajo, modelos base, ejercicios,
-    materiales de consulta y actividades correspondientes
-    a cada tema se proporcionarán durante el desarrollo del curso.
-  </p>
-
-</section>
-
-</main>
-
-
-<!-- ===================================================== -->
-<!-- PIE DE PÁGINA -->
-<!-- ===================================================== -->
-
-<footer>
-
-  <p><strong>Arq. Mónica Cecilia Soto Marín</strong></p>
-
-  <p>
-    Modelado de Ingenierías | Agosto - Diciembre 2026
-  </p>
-
-  <p>
-    Instituto Tecnológico de Zacatecas
-  </p>
-
-</footer>
+  <footer>
+    Modelado de Ingenierías · Programa Educativo de Arquitectura
+  </footer>
 
 </body>
 </html>
