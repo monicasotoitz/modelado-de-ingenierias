@@ -299,6 +299,87 @@
       font-weight: bold;
     }
 
+
+    /* =========================
+       ETAPAS DESPLEGABLES
+    ========================== */
+
+    .etapas-curso {
+      margin-top: 20px;
+    }
+
+    .etapa {
+      margin-bottom: 14px;
+      border: 1px solid #dce4e8;
+      border-radius: 9px;
+      box-shadow: none;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .etapa > summary {
+      background: #eef2f4;
+      padding: 16px 20px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-right: 52px;
+    }
+
+    .etapa > summary:hover {
+      background: #e5ecef;
+    }
+
+    .etapa[open] > summary {
+      background: #dfe7eb;
+    }
+
+    .etapa-contenido {
+      padding: 20px;
+      background: #fff;
+    }
+
+    .estado {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: normal;
+      vertical-align: middle;
+    }
+
+    .estado-completado {
+      background: #e8f1ec;
+      color: #2f6b55;
+    }
+
+    .estado-actual {
+      background: #dfe7eb;
+      color: #1f3b4d;
+      font-weight: bold;
+    }
+
+    .estado-proximo {
+      background: #f1f2f3;
+      color: #6a7379;
+    }
+
+    .idea-clave {
+      background: #eef4f6;
+      border-left: 4px solid #1f3b4d;
+      padding: 15px 18px;
+      border-radius: 6px;
+      margin: 16px 0;
+    }
+
+    .proximamente {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
     /* =========================
        CRITERIOS
     ========================== */
@@ -567,84 +648,337 @@
         </ul>
 
 
-
         <div class="seguimiento-clase">
 
           <h3>Seguimiento de clase</h3>
 
           <p>
-            En esta sección se registrarán los contenidos, ejercicios y actividades
-            desarrollados durante las sesiones, de manera que puedas consultar el avance
-            del curso y retomar los conceptos principales cuando lo necesites.
+            En esta sección encontrarás el avance del Tema 1 organizado por etapas.
+            Cada bloque puede desplegarse para consultar los contenidos, conceptos
+            y ejercicios trabajados durante el curso.
           </p>
 
-          <h3>Clase 1 · Antes de modelar</h3>
+          <div class="etapas-curso">
 
-          <div class="tarjetas-clase">
+            <!-- ETAPA 01 -->
+            <details class="etapa">
+              <summary>
+                01 · Fundamentos
+                <span class="estado estado-completado">Completado</span>
+              </summary>
 
-            <div class="tarjeta-clase">
-              <h4>Lo que vimos</h4>
-              <ul>
-                <li>Plantilla estructural de Revit.</li>
-                <li>Familias estructurales.</li>
-                <li>Revisión de niveles.</li>
-                <li>Configuración de unidades del proyecto.</li>
-                <li>Uso de la ventana de Propiedades.</li>
-                <li>Duplicado y modificación de tipos de familia.</li>
-                <li>Revisión de propiedades de una columna estructural.</li>
-                <li>Introducción al recubrimiento en elementos de concreto armado.</li>
-              </ul>
-            </div>
+              <div class="etapa-contenido">
 
-            <div class="tarjeta-clase">
-              <h4>Antes de modificar un elemento</h4>
-              <ul>
-                <li>Identifica la familia y el tipo.</li>
-                <li>Revisa sus dimensiones y materiales.</li>
-                <li>Verifica niveles y restricciones.</li>
-                <li>Duplica el tipo cuando sea necesario.</li>
-                <li>Comprende qué propiedad estás modificando y qué efecto tendrá.</li>
-              </ul>
-            </div>
+                <h3>Clase 1 · Antes de modelar</h3>
 
-          </div>
+                <div class="tarjetas-clase">
 
-          <h3>Actividades</h3>
+                  <div class="tarjeta-clase">
+                    <h4>Lo que vimos</h4>
+                    <ul>
+                      <li>Plantilla estructural de Revit.</li>
+                      <li>Familias estructurales.</li>
+                      <li>Revisión de niveles.</li>
+                      <li>Configuración de unidades del proyecto.</li>
+                      <li>Uso de la ventana de Propiedades.</li>
+                      <li>Duplicado y modificación de tipos de familia.</li>
+                      <li>Revisión de propiedades de una columna estructural.</li>
+                      <li>Introducción al recubrimiento en elementos de concreto armado.</li>
+                    </ul>
+                  </div>
 
-          <div class="actividad">
-            <h4>Actividad 01 · Recubrimientos</h4>
-            <p>
-              Investiga cuánto recubrimiento requieren cinco elementos de concreto armado.
-              Registra para cada uno el elemento, el recubrimiento, la condición de exposición
-              y la fuente consultada.
-            </p>
-          </div>
+                  <div class="tarjeta-clase">
+                    <h4>Antes de modificar un elemento</h4>
+                    <ul>
+                      <li>Identifica la familia y el tipo.</li>
+                      <li>Revisa sus dimensiones y materiales.</li>
+                      <li>Verifica niveles y restricciones.</li>
+                      <li>Duplica el tipo cuando sea necesario.</li>
+                      <li>Comprende qué propiedad estás modificando y qué efecto tendrá.</li>
+                    </ul>
+                  </div>
 
-          <div class="actividad">
-            <h4>Actividad 02 · Reconocimiento de sistemas en casa</h4>
-            <p>
-              Sobre un plano impreso de tu vivienda, identifica y dibuja los elementos de
-              alimentación de las instalaciones estudiadas, estableciendo una simbología
-              básica por color e incorporando una pequeña leyenda.
-            </p>
-          </div>
+                </div>
 
-          <div class="reto">
-            <strong>Explora en Revit:</strong>
-            selecciona una columna estructural y localiza su familia, tipo, nivel base,
-            nivel superior, desfases, material, dimensiones y propiedades relacionadas
-            con el recubrimiento.
-          </div>
+                <h3>Actividades</h3>
 
-          <h3>Ruta del Tema 1</h3>
+                <div class="actividad">
+                  <h4>Actividad 01 · Recubrimientos</h4>
+                  <p>
+                    Investiga cuánto recubrimiento requieren cinco elementos de concreto armado.
+                    Registra para cada uno el elemento, el recubrimiento, la condición de exposición
+                    y la fuente consultada.
+                  </p>
+                </div>
 
-          <div class="ruta-curso">
-            <span class="paso-ruta actual">01 · Fundamentos</span>
-            <span class="paso-ruta">02 · Columnas y trabes</span>
-            <span class="paso-ruta">03 · Cimentación</span>
-            <span class="paso-ruta">04 · Sistemas estructurales</span>
-            <span class="paso-ruta">05 · Documentación</span>
-            <span class="paso-ruta">06 · Coordinación BIM</span>
+                <div class="actividad">
+                  <h4>Actividad 02 · Reconocimiento de sistemas en casa</h4>
+                  <p>
+                    Sobre un plano impreso de tu vivienda, identifica y dibuja los elementos de
+                    alimentación de las instalaciones estudiadas, estableciendo una simbología
+                    básica por color e incorporando una pequeña leyenda.
+                  </p>
+                </div>
+
+                <div class="reto">
+                  <strong>Explora en Revit:</strong>
+                  selecciona una columna estructural y localiza su familia, tipo, nivel base,
+                  nivel superior, desfases, material, dimensiones y propiedades relacionadas
+                  con el recubrimiento.
+                </div>
+
+              </div>
+            </details>
+
+
+            <!-- ETAPA 02 -->
+            <details class="etapa">
+              <summary>
+                02 · Vinculación, niveles y ejes
+                <span class="estado estado-completado">Completado</span>
+              </summary>
+
+              <div class="etapa-contenido">
+
+                <h3>Clase 2 · Vinculación y referencias estructurales</h3>
+
+                <div class="tarjetas-clase">
+
+                  <div class="tarjeta-clase">
+                    <h4>Lo que vimos</h4>
+                    <ul>
+                      <li>Vinculación del modelo arquitectónico con la plantilla estructural.</li>
+                      <li>Uso del modelo arquitectónico como referencia para el desarrollo estructural.</li>
+                      <li>Creación y revisión de niveles estructurales.</li>
+                      <li>Verificación de elevaciones con respecto al modelo arquitectónico.</li>
+                      <li>Creación de ejes estructurales.</li>
+                      <li>Organización de ejes mediante letras y números.</li>
+                      <li>Relación entre la modulación arquitectónica y la lógica estructural.</li>
+                    </ul>
+                  </div>
+
+                  <div class="tarjeta-clase">
+                    <h4>Antes de continuar</h4>
+                    <ul>
+                      <li>Verifica que el modelo arquitectónico esté correctamente vinculado.</li>
+                      <li>Revisa que los niveles coincidan con las elevaciones del proyecto.</li>
+                      <li>Identifica la modulación principal antes de crear los ejes.</li>
+                      <li>Evita colocar un eje en cada muro; los ejes deben responder al sistema estructural.</li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="idea-clave">
+                  <strong>Concepto clave:</strong>
+                  el modelo arquitectónico se utiliza como referencia para desarrollar el modelo
+                  estructural. Ambos modelos permanecen independientes, pero deben mantenerse coordinados.
+                </div>
+
+                <div class="reto">
+                  <strong>Explora en Revit:</strong>
+                  selecciona el vínculo arquitectónico, un nivel y un eje estructural.
+                  Revisa las propiedades de cada elemento e identifica qué información puedes modificar.
+                </div>
+
+              </div>
+            </details>
+
+
+            <!-- ETAPA 03 -->
+            <details class="etapa" open>
+              <summary>
+                03 · Cimentación mixta
+                <span class="estado estado-actual">Etapa actual</span>
+              </summary>
+
+              <div class="etapa-contenido">
+
+                <h3>Clase 3 · Cimentación mixta: del análisis al modelo</h3>
+
+                <div class="tarjetas-clase">
+
+                  <div class="tarjeta-clase">
+                    <h4>Lo que veremos</h4>
+                    <ul>
+                      <li>Análisis de la planta arquitectónica de la vivienda.</li>
+                      <li>Identificación de apoyos, claros y zonas estratégicas.</li>
+                      <li>Selección de una propuesta de cimentación mixta.</li>
+                      <li>Uso de zapatas aisladas en claros largos, como cochera.</li>
+                      <li>Uso de zapatas corridas en puntos estratégicos.</li>
+                      <li>Modelado de cimiento trapezoidal de piedra o mampostería.</li>
+                      <li>Revisión de niveles, dimensiones, materiales y relación con los ejes.</li>
+                    </ul>
+                  </div>
+
+                  <div class="tarjeta-clase">
+                    <h4>Aplicación en el proyecto</h4>
+                    <p>
+                      Cada estudiante desarrollará el modelo de cimentación de su vivienda
+                      mediante una solución mixta que combine, según el caso:
+                    </p>
+                    <ul>
+                      <li>Zapatas aisladas.</li>
+                      <li>Zapatas corridas.</li>
+                      <li>Cimiento de piedra o mampostería.</li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="idea-clave">
+                  <strong>Concepto clave:</strong>
+                  la cimentación se plantea como un sistema que responde a los apoyos,
+                  los claros y las características del proyecto arquitectónico.
+                </div>
+
+                <div class="actividad">
+                  <h4>Tutorial · Cimiento trapezoidal</h4>
+                  <p>
+                    Se utilizará un tutorial como apoyo para crear y modelar un cimiento
+                    trapezoidal que represente la cimentación de piedra o mampostería.
+                  </p>
+                </div>
+
+                <div class="reto">
+                  <strong>Explora en Revit:</strong>
+                  compara las propiedades de una zapata aislada, una zapata corrida
+                  y el cimiento de mampostería. Revisa familia, tipo, dimensiones,
+                  material, nivel y restricciones.
+                </div>
+
+              </div>
+            </details>
+
+
+            <!-- ETAPA 04 -->
+            <details class="etapa">
+              <summary>
+                04 · Armado de cimentación
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Incorporación de acero de refuerzo en los elementos modelados:
+                  varillas, estribos, diámetros, separaciones y recubrimientos.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
+
+            <!-- ETAPA 05 -->
+            <details class="etapa">
+              <summary>
+                05 · Detalles estructurales de cimentación
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Generación de cortes, secciones y vistas de detalle a partir de
+                  los elementos estructurales previamente modelados y armados.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
+
+            <!-- ETAPA 06 -->
+            <details class="etapa">
+              <summary>
+                06 · Plano ejecutivo de cimentación
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Organización de la información estructural en plano: cotas,
+                  nomenclaturas, niveles, anotaciones, especificaciones, detalles
+                  constructivos, títulos y escalas.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
+
+            <!-- ETAPA 07 -->
+            <details class="etapa">
+              <summary>
+                07 · Modelado de losas
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Análisis y modelado del sistema de losas de la vivienda,
+                  considerando apoyos, espesores, materiales y relación con
+                  los elementos estructurales.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
+
+            <!-- ETAPA 08 -->
+            <details class="etapa">
+              <summary>
+                08 · Armado de losas
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Incorporación y organización del acero de refuerzo de las losas,
+                  considerando recubrimientos, diámetros, dirección y separación.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
+
+            <!-- ETAPA 09 -->
+            <details class="etapa">
+              <summary>
+                09 · Detalles estructurales de losas
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Obtención de secciones, detalles y vistas necesarias para
+                  documentar gráficamente el sistema de losas y su armado.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
+
+            <!-- ETAPA 10 -->
+            <details class="etapa">
+              <summary>
+                10 · Plano ejecutivo de losas
+                <span class="estado estado-proximo">Próximamente</span>
+              </summary>
+              <div class="etapa-contenido">
+                <p>
+                  Integración del plano ejecutivo de losas con cotas,
+                  nomenclaturas, niveles, especificaciones, detalles,
+                  anotaciones y organización de las vistas.
+                </p>
+                <p class="proximamente">
+                  El contenido detallado se incorporará conforme avance el curso.
+                </p>
+              </div>
+            </details>
+
           </div>
 
         </div>
