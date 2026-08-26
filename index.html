@@ -213,6 +213,92 @@
       margin-bottom: 7px;
     }
 
+
+    /* =========================
+       SEGUIMIENTO DEL CURSO
+    ========================== */
+
+    .seguimiento-clase {
+      background: #f8fafb;
+      border-left: 5px solid #1f3b4d;
+      padding: 22px;
+      border-radius: 8px;
+      margin: 22px 0;
+    }
+
+    .seguimiento-clase h3 {
+      margin-top: 0;
+    }
+
+    .tarjetas-clase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+      margin: 18px 0;
+    }
+
+    .tarjeta-clase {
+      background: #f5f7f8;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid #e1e6e9;
+    }
+
+    .tarjeta-clase h4 {
+      margin: 0 0 10px;
+      color: #1f3b4d;
+      font-size: 1rem;
+    }
+
+    .tarjeta-clase ul {
+      margin-bottom: 0;
+    }
+
+    .actividad {
+      background: #fff;
+      border: 1px solid #dfe7eb;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 15px;
+    }
+
+    .actividad h4 {
+      margin: 0 0 8px;
+      color: #1f3b4d;
+    }
+
+    .reto {
+      background: #eef4f6;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .reto strong {
+      color: #1f3b4d;
+    }
+
+    .ruta-curso {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .paso-ruta {
+      background: #f5f7f8;
+      border: 1px solid #dde4e8;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-size: 0.92rem;
+    }
+
+    .paso-ruta.actual {
+      background: #dfe7eb;
+      color: #1f3b4d;
+      font-weight: bold;
+    }
+
     /* =========================
        CRITERIOS
     ========================== */
@@ -479,6 +565,89 @@
             Semana de Arquitectura.
           </li>
         </ul>
+
+
+
+        <div class="seguimiento-clase">
+
+          <h3>Seguimiento de clase</h3>
+
+          <p>
+            En esta sección se registrarán los contenidos, ejercicios y actividades
+            desarrollados durante las sesiones, de manera que puedas consultar el avance
+            del curso y retomar los conceptos principales cuando lo necesites.
+          </p>
+
+          <h3>Clase 1 · Antes de modelar</h3>
+
+          <div class="tarjetas-clase">
+
+            <div class="tarjeta-clase">
+              <h4>Lo que vimos</h4>
+              <ul>
+                <li>Plantilla estructural de Revit.</li>
+                <li>Familias estructurales.</li>
+                <li>Revisión de niveles.</li>
+                <li>Configuración de unidades del proyecto.</li>
+                <li>Uso de la ventana de Propiedades.</li>
+                <li>Duplicado y modificación de tipos de familia.</li>
+                <li>Revisión de propiedades de una columna estructural.</li>
+                <li>Introducción al recubrimiento en elementos de concreto armado.</li>
+              </ul>
+            </div>
+
+            <div class="tarjeta-clase">
+              <h4>Antes de modificar un elemento</h4>
+              <ul>
+                <li>Identifica la familia y el tipo.</li>
+                <li>Revisa sus dimensiones y materiales.</li>
+                <li>Verifica niveles y restricciones.</li>
+                <li>Duplica el tipo cuando sea necesario.</li>
+                <li>Comprende qué propiedad estás modificando y qué efecto tendrá.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <h3>Actividades</h3>
+
+          <div class="actividad">
+            <h4>Actividad 01 · Recubrimientos</h4>
+            <p>
+              Investiga cuánto recubrimiento requieren cinco elementos de concreto armado.
+              Registra para cada uno el elemento, el recubrimiento, la condición de exposición
+              y la fuente consultada.
+            </p>
+          </div>
+
+          <div class="actividad">
+            <h4>Actividad 02 · Reconocimiento de sistemas en casa</h4>
+            <p>
+              Sobre un plano impreso de tu vivienda, identifica y dibuja los elementos de
+              alimentación de las instalaciones estudiadas, estableciendo una simbología
+              básica por color e incorporando una pequeña leyenda.
+            </p>
+          </div>
+
+          <div class="reto">
+            <strong>Explora en Revit:</strong>
+            selecciona una columna estructural y localiza su familia, tipo, nivel base,
+            nivel superior, desfases, material, dimensiones y propiedades relacionadas
+            con el recubrimiento.
+          </div>
+
+          <h3>Ruta del Tema 1</h3>
+
+          <div class="ruta-curso">
+            <span class="paso-ruta actual">01 · Fundamentos</span>
+            <span class="paso-ruta">02 · Columnas y trabes</span>
+            <span class="paso-ruta">03 · Cimentación</span>
+            <span class="paso-ruta">04 · Sistemas estructurales</span>
+            <span class="paso-ruta">05 · Documentación</span>
+            <span class="paso-ruta">06 · Coordinación BIM</span>
+          </div>
+
+        </div>
 
 
         <h3>Apoyos didácticos</h3>
